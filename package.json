@@ -1,0 +1,35 @@
+{
+  "name": "babel-plugin-module-selector",
+  "version": "1.0.0",
+  "description": "Replace modules based on a selector",
+  "main": "lib/index.js",
+  "scripts": {
+    "build": "babel src -d lib",
+    "clean": "rm -rf lib",
+    "prepublish": "npm run clean && npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sethyuan/babel-plugin-module-selector.git"
+  },
+  "keywords": [
+    "babel",
+    "plugin",
+    "module",
+    "selector"
+  ],
+  "author": "Seth Yuan <cavingdeep@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sethyuan/babel-plugin-module-selector/issues"
+  },
+  "homepage": "https://github.com/sethyuan/babel-plugin-module-selector#readme",
+  "devDependencies": {
+    "babel-cli": "^6.18.0",
+    "babel-eslint": "^7.1.1",
+    "babel-plugin-transform-object-rest-spread": "^6.20.2",
+    "babel-preset-latest": "^6.16.0",
+    "eslint-plugin-babel": "^4.0.0",
+    "eslint_d": "^4.2.1"
+  }
+}
