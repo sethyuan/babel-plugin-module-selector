@@ -11,7 +11,7 @@ function pathExists(filePath, extensions) {
 
 export default ({types: t}) => {
   function transformImportCall(p, state) {
-    const root = path.join(process.cwd(), state.opts.root)
+    const roots = state.opts.roots.map((root) => path.join(process.cwd(), root))
     const selectorsRoot = state.opts.selectorsRoot
     const selector = process.env.BABEL_MODULE_SELECTOR || state.opts.selector
     const exts = state.opts.extensions || [".js", ".jsx"]
@@ -22,8 +22,10 @@ export default ({types: t}) => {
 
     if (source.type === "StringLiteral"
         && selector
-        && currentFile.includes(root)
+        && roots.some((root) => currentFile.includes(root))
         && sourceText.startsWith(".")) {
+      const root = roots.find((root) => currentFile.includes(root))
+
       const destPath = path.join(
         root,
         selectorsRoot,
