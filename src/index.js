@@ -36,7 +36,7 @@ export default ({types: t}) => {
         )
       )
 
-      if (pathExists(destPath, exts)) {
+      if (destPath !== currentFile && pathExists(destPath, exts)) {
         const modulePath = path.relative(
           path.dirname(state.file.opts.filename),
           destPath,
