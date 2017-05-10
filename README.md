@@ -16,14 +16,14 @@ Configure your `.babelrc` to use this plugin. An example of it is provided below
 {
   "plugins": [
     ["module-selector", {
-      "root": "src",
+      "roots": ["src"],
       "selectorsRoot": "customizations"
     }]
   ]
 }
 ```
 
-`root` is the folder under which transformations will apply. `selectorsRoot` is the root folder where you place all your customization selectors. `selectorsRoot` should be within `root`. Each customization selector can mirror a part of the folder structure of your `root`. I.e:
+In `roots` you define the folders under which transformations will apply. `selectorsRoot` is the root folder where you place all your customization selectors. `selectorsRoot` should be within `roots`. Each customization selector can mirror a part of the folder structure of your root. I.e:
 
 ```
 project

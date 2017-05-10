@@ -1,6 +1,6 @@
 {
   "name": "babel-plugin-module-selector",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "Replace modules based on a selector",
   "main": "lib/index.js",
   "scripts": {
